@@ -2,12 +2,7 @@ import * as React from 'react';
 import {BlockProps} from '../../ReactEmbed';
 import {rule} from 'p4-css';
 
-const blockClass = rule({
-  maxW: '100%',
-  'twitter-widget': {
-    mar: '0 !important',
-  },
-});
+const blockClass = rule({});
 
 const wnd = window as any;
 
