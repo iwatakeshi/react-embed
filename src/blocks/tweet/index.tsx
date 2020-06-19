@@ -10,15 +10,17 @@ class TwitterTweet extends React.PureComponent<BlockProps, {}> {
   mounted: boolean = true;
 
   componentDidMount() {
-    require('scriptjs')('https://platform.twitter.com/widgets.js', 'tw', () => {
-      if (!this.mounted) return;
-      if (!wnd.twttr) {
-        // tslint:disable-next-line
-        console.error('Failed to load Twitter lib.');
-        return;
-      }
-      wnd.twttr.widgets.createTweet(this.props.id, this.refs.ref, {theme: this.props.isDark ? 'dark' : 'light'});
-    });
+    if (typeof window !== 'undefined') {
+      require('scriptjs')('https://platform.twitter.com/widgets.js', 'tw', () => {
+        if (!this.mounted) return;
+        if (!wnd.twttr) {
+          // tslint:disable-next-line
+          console.error('Failed to load Twitter lib.');
+          return;
+        }
+        wnd.twttr.widgets.createTweet(this.props.id, this.refs.ref, {theme: this.props.isDark ? 'dark' : 'light'});
+      });
+    }
   }
 
   componentWillUnmount() {
