@@ -1,6 +1,7 @@
 import * as React from 'react';
 import defaultRouter from './routeToBlock';
 import defaultRender from './renderer';
+import dynamic from 'next/dynamic';
 
 const IS_BROWSER = typeof window === 'object';
 
@@ -26,19 +27,19 @@ export interface Blocks {
 }
 
 const defaultBlocks: Blocks = {
-  figma: React.lazy(() => import('./blocks/figma')),
-  gist: React.lazy(() => import('./blocks/gist')),
-  gmaps: React.lazy(() => import('./blocks/gmaps')),
-  imgur: React.lazy(() => import('./blocks/imgur')),
-  instagram: React.lazy(() => import('./blocks/instagram')),
-  jsfiddle: React.lazy(() => import('./blocks/jsfiddle')),
-  simplePlayer: React.lazy(() => import('./blocks/react-simple-player')),
-  reactPlayer: React.lazy(() => import('./blocks/react-player')),
-  replit: React.lazy(() => import('./blocks/replit')),
-  soundcloud: React.lazy(() => import('./blocks/soundcloud')),
-  tweet: React.lazy(() => import('./blocks/tweet')),
-  youtube: React.lazy(() => import('./blocks/youtube')),
-  gfycat: React.lazy(() => import('./blocks/gfycat')),
+  figma: dynamic(() => import('./blocks/figma')),
+  gist: dynamic(() => import('./blocks/gist')),
+  gmaps: dynamic(() => import('./blocks/gmaps')),
+  imgur: dynamic(() => import('./blocks/imgur')),
+  instagram: dynamic(() => import('./blocks/instagram')),
+  jsfiddle: dynamic(() => import('./blocks/jsfiddle')),
+  simplePlayer: dynamic(() => import('./blocks/react-simple-player')),
+  reactPlayer: dynamic(() => import('./blocks/react-player')),
+  replit: dynamic(() => import('./blocks/replit')),
+  soundcloud: dynamic(() => import('./blocks/soundcloud')),
+  tweet: dynamic(() => import('./blocks/tweet')),
+  youtube: dynamic(() => import('./blocks/youtube')),
+  gfycat: dynamic(() => import('./blocks/gfycat')),
 };
 
 export type ReactEmbedRouterResult = undefined | [undefined | React.ComponentType<BlockProps>, EmbedBlockId];
