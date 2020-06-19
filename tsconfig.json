@@ -4,6 +4,7 @@
     "module": "commonjs",
     "moduleResolution": "Node",
     "removeComments": true,
+    "checkJs": false,
     "noImplicitAny": false,
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
