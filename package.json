@@ -28,7 +28,7 @@
     "storybook": "start-storybook -p 6010",
     "storybook:build": "build-storybook",
     "storybook:clean": "rimraf storybook-static",
-    "postinstall": "yarn build"
+    "postinstall": "yarn && yarn build"
   },
   "license": "MIT",
   "keywords": [],
