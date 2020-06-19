@@ -20,9 +20,7 @@
     "tslint": "tslint 'src/**/*.{js,jsx,ts,tsx}' -t verbose",
     "test": "jest --no-cache --config='jest.config.js'",
     "release": "semantic-release",
-    "build:cjs": "tsc",
-    "build:es": "tsc -m esNext --outDir esm",
-    "build": "npm run build:cjs && npm run build:es",
+    "build": "tsc",
     "postinstall": "npm run build"
   },
   "license": "MIT",
