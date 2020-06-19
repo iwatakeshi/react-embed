@@ -27,34 +27,36 @@
     "build": "yarn build:cjs && yarn build:es",
     "storybook": "start-storybook -p 6010",
     "storybook:build": "build-storybook",
-    "storybook:clean": "rimraf storybook-static"
+    "storybook:clean": "rimraf storybook-static",
+    "postinstall": "yarn build"
   },
+  "license": "MIT",
   "keywords": [],
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
   },
   "devDependencies": {
-    "@babel/core": "7.9.6",
+    "@babel/core": "7.10.2",
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
     "@semantic-release/changelog": "5.0.1",
     "@semantic-release/git": "9.0.0",
     "@semantic-release/npm": "7.0.5",
-    "@storybook/addon-actions": "5.3.18",
-    "@storybook/addon-backgrounds": "5.3.18",
-    "@storybook/addon-knobs": "5.3.18",
-    "@storybook/addon-links": "5.3.18",
-    "@storybook/addon-notes": "5.3.18",
-    "@storybook/addon-options": "5.3.18",
-    "@storybook/addon-viewport": "5.3.18",
-    "@storybook/react": "5.3.18",
-    "@types/jest": "25.2.3",
-    "@types/react": "16.9.35",
+    "@storybook/addon-actions": "5.3.19",
+    "@storybook/addon-backgrounds": "5.3.19",
+    "@storybook/addon-knobs": "5.3.19",
+    "@storybook/addon-links": "5.3.19",
+    "@storybook/addon-notes": "5.3.19",
+    "@storybook/addon-options": "5.3.19",
+    "@storybook/addon-viewport": "5.3.19",
+    "@storybook/react": "5.3.19",
+    "@types/jest": "26.0.0",
+    "@types/react": "16.9.38",
     "@types/react-dom": "16.9.8",
     "babel-loader": "8.1.0",
-    "fork-ts-checker-webpack-plugin": "4.1.4",
-    "git-cz": "4.5.0",
+    "fork-ts-checker-webpack-plugin": "5.0.3",
+    "git-cz": "4.7.0",
     "husky": "4.2.5",
     "jest": "26.0.1",
     "prettier": "2.0.5",
@@ -62,14 +64,14 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "rimraf": "3.0.2",
-    "semantic-release": "17.0.7",
+    "semantic-release": "17.0.8",
     "storybook-readme": "5.0.8",
-    "ts-jest": "24.3.0",
-    "ts-loader": "7.0.4",
-    "ts-node": "8.10.1",
-    "tslint": "5.20.1",
+    "ts-jest": "26.1.0",
+    "ts-loader": "7.0.5",
+    "ts-node": "8.10.2",
+    "tslint": "6.1.2",
     "tslint-config-common": "1.6.0",
-    "typescript": "3.9.2",
+    "typescript": "3.9.5",
     "url-loader": "4.1.0"
   },
   "release": {
@@ -92,16 +94,9 @@
   "dependencies": {
     "p4-css": "^1.5.1",
     "react-instagram-embed": "^1.5.0",
-    "react-player": "^1.15.3",
+    "react-player": "^2.3.1",
     "react-simple-player": "^1.0.3",
     "react-youtube": "^7.11.2",
     "scriptjs": "^2.5.9"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "pretty-quick --staged && yarn tslint",
-      "pre-push": "yarn prettier:diff"
-    }
   }
 }
