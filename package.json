@@ -9,7 +9,6 @@
   "homepage": "https://github.com/streamich/react-embed",
   "repository": "streamich/react-embed",
   "main": "lib/index.js",
-  "module": "esm/index.js",
   "files": [
     "lib/",
     "esm/"
