@@ -15,17 +15,15 @@
     "esm/"
   ],
   "scripts": {
-    "start": "yarn storybook",
     "prettier": "prettier --ignore-path .gitignore --write 'src/**/*.{ts,tsx,js,jsx}'",
     "prettier:diff": "prettier -l 'src/**/*.{ts,tsx,js,jsx}'",
     "tslint": "tslint 'src/**/*.{js,jsx,ts,tsx}' -t verbose",
     "test": "jest --no-cache --config='jest.config.js'",
     "release": "semantic-release",
-    "clean": "rimraf lib esm",
     "build:cjs": "tsc",
     "build:es": "tsc -m esNext --outDir esm",
-    "build": "yarn build:cjs && yarn build:es",
-    "postinstall": "yarn build"
+    "build": "npm run build:cjs && npm run build:es",
+    "postinstall": "npm run build"
   },
   "license": "MIT",
   "keywords": [],
@@ -45,7 +43,6 @@
     "pretty-quick": "2.0.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "rimraf": "3.0.2",
     "semantic-release": "17.0.8",
     "ts-jest": "26.1.0",
     "ts-loader": "7.0.5",
