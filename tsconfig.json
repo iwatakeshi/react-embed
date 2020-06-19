@@ -35,6 +35,7 @@
     "src/**/__tests__/**/*.*",
     "src/**/__mocks__/**/*.*",
     "*.test.ts",
-    "*.spec.ts"
+    "*.spec.ts",
+    "*.story.ts"
   ]
 }
