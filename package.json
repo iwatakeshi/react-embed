@@ -9,6 +9,7 @@
   "homepage": "https://github.com/streamich/react-embed",
   "repository": "streamich/react-embed",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib/",
     "esm/"
@@ -20,7 +21,7 @@
     "test": "jest --no-cache --config='jest.config.js'",
     "release": "semantic-release",
     "build": "tsc",
-    "postinstall": "npm run build"
+    "prepare": "npm run build"
   },
   "license": "MIT",
   "keywords": [],
@@ -48,23 +49,6 @@
     "tslint-config-common": "1.6.0",
     "typescript": "3.9.5",
     "url-loader": "4.1.0"
-  },
-  "release": {
-    "verifyConditions": [
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/git"
-    ],
-    "prepare": [
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/git"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "git-cz"
-    }
   },
   "dependencies": {
     "p4-css": "^1.5.1",
