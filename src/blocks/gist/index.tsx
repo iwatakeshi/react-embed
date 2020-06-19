@@ -55,7 +55,7 @@ class Gist extends React.PureComponent<GistProps> {
 
   render() {
     const {renderWrap} = this.props;
-
+    if (typeof window === 'undefined') return null;
     return renderWrap(
       <iframe
         id={this.id}

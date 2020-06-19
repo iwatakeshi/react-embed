@@ -56,7 +56,7 @@ class Imgur extends React.Component<BlockProps, ImgurState> {
   render() {
     const {state} = this;
     const height = state.height || 0;
-
+    if (typeof window === 'undefined') return null;
     return this.props.renderWrap(
       <div style={{...blockStyle, border: height ? '1px solid #E5E9F2' : ''}}>
         <iframe scrolling="no" frameBorder="0" src={this.src()} style={{...iframeStyle, height}} />

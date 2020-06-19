@@ -19,6 +19,7 @@ const blockClass = rule({
 });
 
 const JsFiddle: React.SFC<BlockProps> = ({id, renderWrap}) => {
+  if (typeof window === 'undefined') return null;
   return renderWrap(
     <div className={blockClass}>
       <div>

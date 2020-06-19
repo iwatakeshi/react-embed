@@ -3,6 +3,7 @@ import {BlockProps} from '../..';
 import InstagramEmbed from 'react-instagram-embed';
 
 const Instagram: React.SFC<BlockProps> = ({url, renderWrap}) => {
+  if (typeof window === 'undefined') return null;
   return renderWrap(
     <InstagramEmbed
       url={url}

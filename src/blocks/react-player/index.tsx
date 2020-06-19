@@ -7,6 +7,7 @@ const style = {
 };
 
 const ReactPlayerWrapper: React.SFC<BlockProps> = ({url, renderWrap}) => {
+  if (typeof window === 'undefined') return null;
   return renderWrap(<ReactPlayer url={url} style={style} controls={true} volume={1} />);
 };
 

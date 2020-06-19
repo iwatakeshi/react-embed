@@ -24,7 +24,7 @@ const Gmaps: React.SFC<BlockProps> = ({url, renderWrap, renderVoid}) => {
   if (!matches) return renderVoid();
 
   const [omit, lat, lng] = matches;
-
+  if (typeof window === 'undefined') return null;
   return renderWrap(
     <div className={blockClass}>
       <iframe

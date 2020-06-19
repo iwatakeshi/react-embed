@@ -16,6 +16,7 @@ const iframeClass = rule({
 const Y = YouTube as any;
 
 const YouTubeWrapper: React.FC<BlockProps> = ({id, renderWrap}) => {
+  if (typeof window === 'undefined') return null;
   return renderWrap(<Y videoId={id} containerClassName={blockClass} className={iframeClass} />);
 };
 

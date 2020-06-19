@@ -3,8 +3,11 @@ import {BlockProps} from '../../ReactEmbed';
 import {rule} from 'p4-css';
 
 const blockClass = rule({});
-
-const wnd = window as any;
+declare global {
+  interface Window {
+    twttr: any;
+  }
+}
 
 class TwitterTweet extends React.PureComponent<BlockProps, {}> {
   mounted: boolean = true;
@@ -13,12 +16,12 @@ class TwitterTweet extends React.PureComponent<BlockProps, {}> {
     if (typeof window !== 'undefined') {
       require('scriptjs')('https://platform.twitter.com/widgets.js', 'tw', () => {
         if (!this.mounted) return;
-        if (!wnd.twttr) {
+        if (!window.twttr) {
           // tslint:disable-next-line
           console.error('Failed to load Twitter lib.');
           return;
         }
-        wnd.twttr.widgets.createTweet(this.props.id, this.refs.ref, {theme: this.props.isDark ? 'dark' : 'light'});
+        window.twttr.widgets.createTweet(this.props.id, this.refs.ref, {theme: this.props.isDark ? 'dark' : 'light'});
       });
     }
   }
